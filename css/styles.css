@@ -476,6 +476,8 @@ max-width: 100vw;
 }
 .frame {
     display: flex;
+    justify-content: center;
+    align-items: center;
     width: 24px;
     height: 24px;
     background-color: #31d0aa;
