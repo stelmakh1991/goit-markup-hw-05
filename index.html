@@ -470,14 +470,19 @@
           </div>
           <div>
             <p class="subscribe-column">Subscribe</p>
-            <form class="subscribe-form" name="subscription" autocomplete="off">
+            <form
+              class="subscribe-form"
+              id="subscription"
+              name="subscription"
+              autocomplete="off"
+            >
               <input
                 class="subscribe-input"
                 type="email"
                 name="email"
                 placeholder="E-mail"
               />
-              <button class="btn-subscribe" type="submit">
+              <button class="btn-subscribe" type="submit" form="subscription">
                 <ul class="btn">
                   <li class="btn-text">Subscribe</li>
                   <li class="frame">
@@ -491,6 +496,15 @@
           </div>
         </div>
       </footer>
+    </div>
+    <div class="backdrop">
+      <div class="modal">
+        <button class="close-btn" type="button">
+          <svg class=".modal-btn-icon" width="8" height="8">
+            <use href="./images/icons.svg#icon-close"></use>
+          </svg>
+        </button>
+      </div>
     </div>
   </body>
 </html>
