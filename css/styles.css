@@ -604,7 +604,7 @@ textarea::placeholder {
     line-height: 1.17em;
     letter-spacing: 0.48px;
 }
-label {
+.form-label {
     color: var(--LIGHT-SLATE, #8E8F99);
     font-family: Roboto;
     font-size: 12px;
@@ -617,23 +617,55 @@ label {
     flex-direction: column;
     gap: 4px;
 }
-
-.checkbox-modal {
+                /* C H E C K B O X */
+.check {
     width: 16px;
     height: 16px;
-    margin-right: 8px;
-    border-radius: 4px;
+}
+.new-box {
+    cursor: pointer;
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow-y: visible;
+    width: 16px;
+    height: 16px;
     border: 1px solid var(--NAVY-BLUE-modal, rgba(46, 47, 66, 0.40));
+    border-radius: 2px;
+    margin-right: 8px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-input[type=checkbox]:checked {
-    accent-color: #404BBF;
+.check-text {
+    display: flex;
+    align-items: center;
+    color: var(--LIGHT-SLATE, #8E8F99);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.17em;
+    letter-spacing: 0.48px;
+    width: 338px;
 }
-.privacy-policy {
-    display: inline;
-}
-.privacy-policy-terms {
+.check-link {
     color: var(--IRIS, #4D5AE5);
     text-decoration-line: underline;
+}
+.icon-check {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    fill: #FFFFFF;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.check:checked+.check-text>.new-box {
+    background-color: #404BBF;
+    border-color: #404BBF;
+}
+.check:checked+.check-text>.new-box .icon-check {
+    opacity: 100%;
 }
                 /* S U B M I T   B U T T O N */
 .modal-submit-btn {
@@ -659,11 +691,6 @@ input[type=checkbox]:checked {
 .modal-submit-btn:hover, 
 .modal-submit-btn:focus {
     background-color: #404BBF;
-}
-.privacy-policy-checkbox {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
 }
 .is-opened {
     opacity: 100%;
